@@ -99,7 +99,9 @@ class ProductController extends Controller
           $user->id_product = $request->id;
           $user->profile_photo = $faker->imageUrl($width = 50, $height = 50);
           $user->save();
-          return redirect()->route(ProductController::class,'show',['id'=>$id]);
+         
+          return redirect()->action(
+            [ProductController::class, 'show'], ['id' => $id]);
       }
 
       public function about()

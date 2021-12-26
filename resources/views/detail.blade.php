@@ -34,7 +34,7 @@
             <div class="card my-4">
                 <h5 class="card-header">Leave a Comment</h5>
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="/product/{{$products->id}}" method="post">
                     @csrf
                         <div class="form-group" name="_token" value="<?php echo csrf_token() ?>">
                             <p>Name        : </p>
