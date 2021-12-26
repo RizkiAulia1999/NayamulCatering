@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Comment;
+use Faker\Factory as Faker;
 
 class ProductController extends Controller
 {
@@ -99,7 +100,6 @@ class ProductController extends Controller
           $user->profile_photo = $faker->imageUrl($width = 50, $height = 50);
           $user->save();
           return redirect()->route(ProductController::class,'show',['id'=>$id]);
-  
       }
 
       public function about()

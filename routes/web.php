@@ -19,7 +19,9 @@ use App\Http\Controllers\ReportController;
 |
 */
 
-Route::resource('product', ProductController::class);
+Route::get('product', [ProductController::class,'index']);
+Route::get('product/{id}', [ProductController::class,'show']);
+Route::post('product/{id}',[ProductController::class,'insertData']);
 Route::get('about', [ProductController::class, 'about']);
 
 Route::resource('admin', AdminController::class);
